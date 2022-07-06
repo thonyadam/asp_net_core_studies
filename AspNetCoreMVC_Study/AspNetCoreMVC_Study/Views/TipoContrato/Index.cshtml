@@ -1,0 +1,32 @@
+﻿@model IEnumerable<AspNetCoreMVC_Study.Models.TipoContrato>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Tipo Contrato Lista</h2>
+        </div>
+        <div class="col-6 text-right">
+            <a asp-controller="TipoContrato" asp-action="Create" class="btn btn-primary">
+                Criar Novo Contrato
+            </a>
+        </div>
+    </div>
+
+    <br /><br />
+
+    @using (Html.BeginForm("Index", "TipoContrato", FormMethod.Post, new { id = "editForm" }))
+    {
+        <div>
+            @Html.EditorForModel()
+            <input type="submit" value="Editar" />
+        </div>
+    }
+</div>
